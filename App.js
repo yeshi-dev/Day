@@ -8,19 +8,19 @@ export default function APP(){
         <TextInput
           placeholder ="what would you like to focus...."
           mode={"outlined"}
-          lable ="Focus"
+          label ="Focus"
           style ={styles.InputText}
           
           />
-       <TouchableOpacity style={styles.fabButton} onpress={()=>{}}>
+       <TouchableOpacity style={styles.fabButton} onPress={()=>{}}>
         <Text style={styles.fabText}>+</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.focusedTasks}>
         <Text style={styles.focusTitle}>Things we have focused on:</Text>
         <View style={{padding:20}}>
-          <Text style={{fontSize:18, color:'white', fontWeight:'semi-bold'}}>1, learn react native</Text>
-          <Text style={{fontSize:18, color:'white', fontWeight:'semi-bold'}}>2, js basics</Text>
+          <Text style={{fontSize:18, color:'white', fontWeight:'bold'}}>1, learn react native</Text>
+          <Text style={{fontSize:18, color:'white', fontWeight:'bold'}}>2, js basics</Text>
         </View>
       </View>
     </SafeAreaView>
@@ -29,7 +29,7 @@ export default function APP(){
 const styles =StyleSheet.create({
 container:{
   flex:1,
-  backgroundcolor:'#2f0b68949',
+  backgroundColor:'#2f0b68',
 },
 inputcontainer:{
   flexDirection :'row',
@@ -38,13 +38,17 @@ inputcontainer:{
 InputText:{
   flex:1,
 },
+focusedTasks:{
+  marginTop:20,
+  flex:10,
+},
 fabButton:{
-  height:6,
+  height:60,
   width:60,
   borderRadius:30,
   justifyContent:'center',
   alignItems:'center',
-  backgroundcolor:'transparent',
+  backgroundColor:'transparent',
   borderWidth:2,
   borderColor:'white',
   marginLeft:10,
