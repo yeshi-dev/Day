@@ -4,8 +4,10 @@ import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from 'reac
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
-
-      
+      <Image
+        source={require('../assets/Study.png')}
+        style={styles.image}
+      />
 
       <Text style={styles.title}>Specific Study Planner</Text>
 
@@ -31,6 +33,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5faff',
     padding: 20,
+  },
+  image: {
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginTop: 20,
+    marginBottom: 20
+  },
+  image: {
+    width: 150,
+    height: 150,
+    resizeMode: 'contain',
+    alignSelf: 'center',
+    marginTop: 20,
+    marginBottom: 20
   },
   title: {
     fontSize: 24,
