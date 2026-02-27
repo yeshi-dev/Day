@@ -7,7 +7,7 @@ export default function APP(){
       <View style ={styles.inputcontainer}>
         <TextInput
           placeholder ="what would you like to focus...."
-          mode={"outlined"}
+          mode={"outlined"} 
           label ="Focus"
           style ={styles.InputText}
           
