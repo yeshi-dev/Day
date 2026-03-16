@@ -55,7 +55,7 @@ export default function App(){
 
       <View style={styles.focusedTasks}>
         <Text style={styles.focusTitle}>  Things we've focused on: </Text>
-        {tasks.map((task,index) => (
+        {tasks.map((task,index) => ( 
           <Text key={index} style={styles.taskText}>{task}</Text>
         ))}
         

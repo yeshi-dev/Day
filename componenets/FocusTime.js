@@ -1,10 +1,12 @@
-import { useState , useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Modal } from "react-native";
+ import { useState , useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { TextInput } from "react-native-paper";
 
 export default function FocusTime({ focusTask, onBack }) {
   const [isRunning, setIsRunning] = useState(false);
   const [ selectedTime, setSelectedTime] = useState(null);
+  const [ seconds, setSeconds] = useState("");
 
   const times = [600, 900, 1200];
   const timeFromat = (time) => {
@@ -19,7 +21,7 @@ export default function FocusTime({ focusTask, onBack }) {
     if(isRunning && selectedTime > 0){
         interval = setInterval(() => {
             setSelectedTime((prevTime) => prevTime - 1);
-        }, 1000);
+        }, 1000); 
     } else if (!isRunning && selectedTime !== 0){
         clearInterval(interval);
     }
@@ -31,7 +33,12 @@ export default function FocusTime({ focusTask, onBack }) {
         <Text style={styles.timerText}>
             {selectedTime ? timeFromat(selectedTime) : '0:00'}
         </Text>
-
+        
+         <TextInput style={{width: 100 , height: 50}} value={seconds} onChangeText={(seconds)=>setSeconds(seconds)} placeholder='Please Enter second'
+        />
+        <Button onPress={()=>{setSelectedTime(seconds)}} title='Add' />
+           
+       
         <Text style={styles.subTitle}> Focusing on : </Text>
         <Text style={styles.focusTask}>{focusTask}</Text>
         
